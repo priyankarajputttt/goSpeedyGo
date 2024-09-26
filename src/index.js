@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 
-const dbURI = 'mongodb+srv://pr639490:g0gLbWKTnmIvhChj@cluster0.utbnu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'; // Replace with your MongoDB URI
+const dbURI = 'mongodb+srv://pr639490:g0gLbWKTnmIvhChj@cluster0.utbnu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.log('MongoDB connection error:', err));
