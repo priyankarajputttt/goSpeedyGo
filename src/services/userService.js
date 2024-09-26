@@ -11,15 +11,14 @@ exports.getUserById = async (userId) => {
 };
 
 exports.createUser = async (userData) => {
-    // Check if a user with the same userId already exists
     const existingUser = await User.findOne({ userId: userData.userId });
   
     if (existingUser) {
-      // If the user already exists, throw a BadRequest error
+      // If the user already exists, throw error
       throw Error(`User with the userId - ${userData.userId} already exists`);
     }
   
-    // If the user doesn't exist, proceed to create the new user
+    // If the user doesn't exist, create the new user
     const user = new User(userData);
     return await user.save();
   };

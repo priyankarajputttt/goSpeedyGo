@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const swaggerUi = require('swagger-ui-express');
 const userRoutes = require('./routes/userRoutes');
-// const swaggerDocument = require('./swagger.json');
+const swaggerDocument = require('./swagger.json');
 
 const app = express();
 app.use(express.json());
@@ -13,7 +14,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch((err) => console.log('MongoDB connection error:', err));
 
 // Swagger setup
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // User routes
 app.use('/users', userRoutes);
