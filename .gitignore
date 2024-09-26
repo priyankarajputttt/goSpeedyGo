@@ -5,17 +5,3 @@ package-lock.json
 
 # Environment variables
 .env
-
-# Swagger UI auto-generated files (if applicable)
-swagger-output.json
-
-# Coverage directory used by testing tools like Jest
-coverage/
-
-# Build output
-dist/
-build/
-
-# Miscellaneous
-*.sublime-workspace
-*.sublime-project
